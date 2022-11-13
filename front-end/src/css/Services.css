@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+.ul{
+    list-style-type: none;
+    padding: 0;
+    margin:0
+}
+.ul li{
+    padding:10px;
+    margin:10px;
+    border:1px solid black;
+    border-radius: 20px;
+
+    
+}
+.ul li hover{
+    background-color: hotpink;
+}
+.color{
+    background-color: rgba(239,52,92,0.1);
+}
+.sizing{
+    box-sizing: border-box;
+}

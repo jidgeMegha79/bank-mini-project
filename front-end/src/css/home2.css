@@ -1,0 +1,10 @@
+p{
+    color:grey
+}
+.hovereffect{
+    background-color: white;
+}
+.hovereffect:hover{
+    background-color:pink;
+    
+}

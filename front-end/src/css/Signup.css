@@ -1,0 +1,29 @@
+.error{
+    color:red
+}
+.parent{
+    background: linear-gradient(to bottom right,rgba(240,147,251,0.7),rgba(245,87,108,0.7));
+    overflow: hidden;
+  }
+.child{
+    border: 2px solid grey;
+    background-color: white;
+    width:50%
+   
+}
+.heading h1,p{
+    text-align:center
+}
+.image{
+    width: 50%;
+}
+@media screen and (max-width: 756px) {
+    .child{
+        width: 100%;
+        justify-content: center;
+    }
+    .image{
+        display:none;
+    }
+}
+
