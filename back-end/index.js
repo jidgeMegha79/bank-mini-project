@@ -8,7 +8,8 @@ const db=mysql.createPool({
   host:'localhost',
   user:'root',
   password:'Server4me#',
-  database:'bank_website'
+  database:'bank_website',
+  multipleStatements: true
 });
 
 app.listen(3010,()=>{
@@ -65,10 +66,56 @@ app.post("/api/userlogin",(req,res)=>{
   })
 })
 
-// //for transaction
-// app.post("/api/credit",(req,res)=>{
-//   amount=500;
-//   activity="credit";
-//   id=1;
-//   db.query("")
-// })
+//for deposit
+app.post("/api/deposit",(req,res)=>{
+ amount=req.body.amount;
+ id=req.body.id;
+ const qry="insert into transaction(accountnumber,activity,amount,accountbalance) values((select accountnumber from userInformation where id=?),'credit',?,(select balance from userInformation where id=?))"
+ db.query("update userInformation set balance=balance+? where id=?",[amount,id],(err,result)=>{
+ if(result.affectedRows===1){
+  db.query(qry,[id,amount,id],(err,result)=>{
+    if(result.affectedRows===1){
+    res.send({message:"your account credited with ₹ "+amount +" successfully"})
+    console.log('success')
+    }
+  })
+}else{res.send({message:"Something went wrong"})}
+console.log(result)
+})
+
+ })
+ //for withdraw
+ app.post("/api/withdraw",(req,res)=>{
+  amount=req.body.amount;
+  id=req.body.id;
+  const qry="insert into transaction(accountnumber,activity,amount,accountbalance) values((select accountnumber from userInformation where id=?),'debit',?,(select balance from userInformation where id=?))"
+  db.query("update userInformation set balance=balance-? where id=? AND balance>=?",[amount,id,amount],(err,result)=>{   
+
+    if(result.affectedRows===1){  
+      db.query(qry,[id,amount,id,amount],(err,result)=>{
+        res.send({message:"Your Account is debited with ₹ "+amount +" successfully"})
+      })
+    }else{
+      res.send({message:"You have not sufficient balance to withdraw"})
+    }
+})
+  })
+  //for transaction
+  app.post("/api/transaction",(req,res)=>{
+    id=req.body.id
+    const qry="select * from transaction where accountnumber=(select accountnumber from userInformation where id=?);"
+    db.query(qry,id,(err,result)=>{
+      if(result){
+      res.send(result)
+      }
+    })
+  })
+  //for view balance
+  app.post("/api/viewbalance",(req,res)=>{
+    id=req.body.id
+    const qry="select balance from userInformation where id=?"
+    db.query(qry,id,(err,result)=>{
+      res.send(result)
+      console.log(result)
+    })
+  })

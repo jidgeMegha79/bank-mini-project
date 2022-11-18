@@ -12,9 +12,11 @@ function Login(props){
     const[username,setUsername]=useState('')
     const[password,setPassword]=useState('')
     const[status,setStatus]=useState([])
+    //onchage event for username
     const handleUsername=(e)=>{
       setUsername(e.target.value)
     }
+    //onchange event for user password
     const handlePassword=(e)=>{
         setPassword(e.target.value)
     }
@@ -32,7 +34,9 @@ function Login(props){
                  setStatus(response.data.message)
              }else{
                  navigate('/dashboard')
-               props.onUserlogin(response.data[0].firstname)
+            //    props.onUserlogin({name:response.data[0].firstname,id:response.data[0].id})
+                 props.setId(response.data)
+                 console.log(response.data)
              }
         })
     }else{

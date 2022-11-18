@@ -74,6 +74,7 @@ import React from 'react'
                 <option value="">select country</option>                              
                 {
                     country.map((countryget)=>(
+                        //for every child shoud have unique key error value is important
                         <React.Fragment key={countryget.code}>
                          <option value={countryget.code} >{countryget.name}</option>
                          </React.Fragment>

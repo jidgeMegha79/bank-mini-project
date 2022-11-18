@@ -31,7 +31,7 @@ function Layout(){
         
         
       </Navbar>
-      <Outlet/>
+      {/* <Outlet/> */}
       </div>
     );
 }

@@ -10,16 +10,17 @@ import Navbar from './Components/Navbar'
 import Home2 from './Components/Home2'
 import Footer from './Components/Footer';
 import Dashboard from './Components/Dashboard'
-import { useState } from 'react';
-
-
+import { useState,createContext } from 'react';
+//usecontext for send userid globaly between components
+const Context=createContext()
 function App() {
-  const[userdata,setUserdata]=useState();
+  //usestate for sending login user data to dashboard and its child component
+  const[userdata,setUserdata]=useState([]);
   let location=useLocation();
   //for accessing user data in dashboard component
-  const handleUserlogin=(userdata)=>{
-    setUserdata(userdata)
-  }
+  // const handleUserlogin=(userdata)=>{
+  //   setUserdata(userdata)
+  // }
   
   
   
@@ -32,11 +33,18 @@ function App() {
         <Route index element={<Home2/>}/>
         
         </Route>
-        <Route path='/login' element={<Login onUserlogin={handleUserlogin}/>}></Route>
+         {/* provide setUserdata to login for state updating when user login */}
+        <Route path='/login' element={<Login setId={setUserdata}/>}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/contactUs' element={<ContactUs/>}></Route>
         <Route path='/services' element={<Services/>}></Route>
-        <Route path='/dashboard' element={<Dashboard name={userdata} />}/>
+        
+        <Route path='/dashboard' element={
+        <Context.Provider value={userdata}>
+        <Dashboard />
+        </Context.Provider>
+        }
+        />
         <Route path='*' element={<NoPage/>}></Route>
       </Routes>
       {location.pathname==='/' || location.pathname==='/contactUs' || location.pathname==='/services' ?<Footer/>:null}
@@ -47,3 +55,4 @@ function App() {
 }
 
 export default App;
+export {Context};
