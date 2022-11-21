@@ -1,6 +1,7 @@
 import {NavLink, Outlet} from 'react-router-dom'
 import {Navbar,Nav} from 'react-bootstrap'
 import '../css/layout.css'
+import {Person3Outlined} from '@mui/icons-material';
 
 function Layout(){
     return(      
@@ -20,10 +21,7 @@ function Layout(){
                 <NavLink to='/contactUs' className="nav-link text-white ">Contact Us</NavLink>
               </Nav.Item>     
               <Nav.Item className='me-3 hover'>
-                <NavLink to='/signup' className="nav-link text-white ">Signup</NavLink>
-              </Nav.Item>     
-              <Nav.Item className='me-3 hover'>
-                <NavLink to='/login' className="nav-link text-white ">Login</NavLink>
+                <NavLink to='/login' className="nav-link text-white "><Person3Outlined/><span>Login</span></NavLink>
               </Nav.Item>       
           
             </Nav>

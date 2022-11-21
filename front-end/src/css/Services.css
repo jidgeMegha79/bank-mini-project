@@ -23,3 +23,19 @@
 .sizing{
     box-sizing: border-box;
 }
+.rows{
+    padding:40px;
+
+}
+.imagecontainer{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.centered{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+

@@ -1,14 +1,36 @@
-.div{
-    position: relative;
-    /* width: 100%; */
-    min-height: 100vh;
-    background-image: linear-gradient(to right,rgba(0,100,200,0.8), rgba(255, 88, 88,0.8));
+.cards{
+    /* position: relative;
+     width: 100%; 
+    min-height: 100vh; */
+    background-image: linear-gradient(to right,rgba(0,100,200,0.4), rgba(255, 88, 88,0.8));
     
 }
-/* .container{
- width: 50%;
- float: right;
-} 
-.img{
-    width: 50%;
-} */
+.icon{
+    color: blue;
+
+}
+.icon1{
+    color:tomato;
+    
+
+}
+.icon2{
+    color:blue
+}
+.icon3{
+    color:rgb(16, 157, 212)
+}
+.material-icons.md-48 { 
+    font-size: 48px; 
+}
+.cards{
+    width:100%;
+    height:100%
+}
+.div{
+min-height: 100vh;
+}
+.para{
+    color:black;
+}
+

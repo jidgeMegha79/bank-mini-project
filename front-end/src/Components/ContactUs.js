@@ -1,15 +1,24 @@
 import {AddLocationAlt,Email,Phone} from '@mui/icons-material';
 import {Form} from 'react-bootstrap'
+import Contactimage from '../images/services.jpg'
+import '../css/contactus.css'
 
 const ContactUs=()=>{
   const handleSubmit=(event)=>{
    event.preventDefault()
    alert("Your message send successfully")
   }
-    return(
-        <div>      
+  return(
+    <div> 
+      <div className='imagecontainer'>
+        <img src={Contactimage} width="100%"></img>
+        <div className='centered'>
+          <h1>Contact Us</h1>
+          <p>Get touch in with us</p>
+        </div>
+      </div>  
           
-            <div className="container mb-5 p-5">
+      <div className="container mb-5 p-5">
                 <div className='text-center mb-5'>
                     <h1>Drop Us A Message For Any Query</h1>
                 </div>
@@ -64,8 +73,8 @@ const ContactUs=()=>{
                   </div>
                 </div>
 
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 }
 export default ContactUs;
