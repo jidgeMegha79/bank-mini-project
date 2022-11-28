@@ -9,3 +9,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.buttons{
+    background-image: linear-gradient(to right,rgba(74, 43, 146, 0.644), rgba(148, 148, 185, 0.6));  ;
+    height: 50px;
+    
+}

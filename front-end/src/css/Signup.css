@@ -1,10 +1,7 @@
 .error{
     color:red
 }
-.parent{
-    background: linear-gradient(to bottom right,rgba(240,147,251,0.7),rgba(245,87,108,0.7));
-    overflow: hidden;
-  }
+
 .child{
     border: 2px solid grey;
     background-color: white;
@@ -25,5 +22,17 @@
     .image{
         display:none;
     }
+}
+.signupcard{
+    background: linear-gradient(to bottom right,rgba(214, 126, 231, 0.7),rgba(104, 186, 201, 0.7));
+}
+.secondcol{
+    color:grey;
+}
+.cardbody{
+    font-size: 1.3rem;
+}
+.submitbtn{
+    
 }
 

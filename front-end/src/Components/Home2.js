@@ -1,32 +1,35 @@
 
 import {Container,Row,Col} from 'react-bootstrap'
 import '../css/home2.css'
-import ContactUs from './ContactUs'
+import { Sms, Dashboard,SettingsCell } from '@mui/icons-material'
 const Home2=()=>{
-    return(
-        
-        <div style={{backgroundColor:'#dddddd'}}>
-        
-        <Container className='pt-5 pb-5'>
-            <h1 className='text-center mb-3'>Why Join Us?</h1>
-            <Row className='d-flex  flex-row justify-content-around pt-3' style={{overflowWrap:'break-word'}}>
-                <Col className='col-md-6 col-lg-3 p-3 hovereffect'>
-                   <div>
-                    <h4>Incredible infrastructure</h4>
-                    <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor 
-                    incididunt ut labore dolore magna aliqua.</p>
-                   </div>
+    return(        
+     <div style={{backgroundColor:'#dddddd'}}>        
+        <Container fluid className='p-5 '>
+            <h1 className='text-center '>Our Features</h1>
+            <Row className='d-flex   flex-wrap feature-row s' >
+                <Col className='col-md-6 col-lg-3 col-sm-6 feature-col flex-fill'>
+                   <div className='featurebox'>
+                       <div className='icon'>
+                         <Sms size='large' className='material-icons md-36'/>
+                       </div>
+                     <h2>Incredible infrastructure</h2>
+                     <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor 
+                      incididunt ut labore dolore magna aliqua.</p>
+                    </div>
                 </Col>
-                <Col className='col-md-6 col-lg-3 p-3  hovereffect' >
-                <div className='me-2 '>
-                    <h4>Incredible infrastructure</h4>
+                <Col className='col-md-6 col-lg-3 col-sm-6 feature-col flex-fill' >
+                <div className='featurebox'>
+                    <div className='icon'><Dashboard className='material-icons md-36'/></div>
+                    <h2>Incredible infrastructure</h2>
                     <p >Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor 
                      incididunt ut labore dolore magna aliqua.</p>
                 </div>
                 </Col>
-                <Col className='col-md-6 col-lg-3 p-3 hovereffect'>
-                <div>
-                    <h4>Incredible infrastructure</h4>
+                <Col className='col-md-6 col-lg-3  feature-col flex-fill'>
+                <div className='featurebox'>
+                    <div className='icon'><SettingsCell className='material-icons md-36'/></div>
+                    <h2>Incredible infrastructure</h2>
                     <p >Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor 
                     incididunt ut labore dolore magna aliqua.
                     </p>
@@ -36,10 +39,9 @@ const Home2=()=>{
               
              
             </Row>
-        </Container>
+        </Container>      
         
-        
-        </div>
+     </div>
         
     
     );

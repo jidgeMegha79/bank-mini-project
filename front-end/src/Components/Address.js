@@ -47,29 +47,33 @@ import React from 'react'
      props.onAddressSave(userAddress)
     
     return(
-    <Card className='mt-2'>
-     <Card.Title className='p-2'>Address:</Card.Title>
-     <Card.Body>     
-        <Row>
-            <Col>
-            <Form.Group>
+     <div>    
+        <Row className='mb-3'>
+          <Col className='col-4'>
             <Form.Label>Address Line 1</Form.Label>
-            <Form.Control type='text' onChange={(e)=>setAddress1(e.target.value)} required/>
-            </Form.Group>
-            </Col>
+          </Col>
+          <Col className='col-8'>
+            <Form.Control type='text' 
+            onChange={(e)=>setAddress1(e.target.value)} required
+            placeholder="Enter Address Line 1"/>
+          </Col>   
+          
         </Row>
-        <Row>
-        <Col>
-            <Form.Group>
+        <Row className='mb-3' >
+          <Col className='col-4'>
             <Form.Label>Address Line 2</Form.Label>
-                <Form.Control type='text' onChange={(event)=>setAddress2(event.target.value)}/>
-            </Form.Group>
-        </Col>
+          </Col>
+          <Col className='col-8'>  
+            <Form.Control type='text' 
+            onChange={(event)=>setAddress2(event.target.value)}
+            placeholder='Enter Address Line 2'/>            
+          </Col>
         </Row>
-        <Row>
-        <Col>
-            <Form.Group>
+        <Row className='mb-3'>
+          <Col className='col-4'>        
             <Form.Label>Country</Form.Label>
+          </Col>
+          <Col className='col-8'>
             <Form.Select  onChange={countryChangeHandler} required >
                 <option value="">select country</option>                              
                 {
@@ -81,13 +85,15 @@ import React from 'react'
                          ))             
                 }
                
-            </Form.Select>
-            {/* <p className='error'>{props.formErrors.country}</p> */}
-            </Form.Group>
-        </Col>
-        <Col>
-        <Form.Group>
+            </Form.Select>           
+            
+          </Col>
+        </Row>
+        <Row className='mb-3'>
+          <Col className='col-4'>
             <Form.Label>State</Form.Label>
+          </Col>
+          <Col className='col-8'> 
             <Form.Select onChange={(e)=>setSelectedState(e.target.value)} required>
                 <option value="">select state</option>
                 {
@@ -98,27 +104,31 @@ import React from 'react'
                     ))
                 };
             </Form.Select>
-            </Form.Group>
-        </Col>
-        </Row>
-        <Row>
-        <Col>
-        <Form.Group>
-            <Form.Label>City</Form.Label>
-            <Form.Control type='text' onChange={(e)=>setCity(e.target.value)} required/>
-        </Form.Group>
-        </Col>
-        <Col>
-        <Form.Group>
-            <Form.Label>Zip Code</Form.Label>
-            <Form.Control type='number' onChange={(e)=>setZipcode(e.target.value)} required/>
-        </Form.Group>
-        </Col>
-        </Row>
+          </Col>       
         
-      </Card.Body>
-    </Card>
-    
+        </Row>
+        <Row className='mb-3'>
+          <Col className='col-4'>         
+            <Form.Label>City</Form.Label>
+          </Col>
+          <Col className='col-8'>
+            <Form.Control type='text' 
+            onChange={(e)=>setCity(e.target.value)} required
+            placeholder='Enter City'/>        
+          </Col>
+        </Row>
+        <Row className='mb-3'>
+          <Col className='col-4'>        
+            <Form.Label>Zip Code</Form.Label>
+          </Col>
+          <Col className='col-8'>
+            <Form.Control type='number'
+             onChange={(e)=>setZipcode(e.target.value)} required
+             placeholder='Enter zip code'/>        
+          </Col>
+        </Row>    
+         
+      </div>
     );
 }
 export default Address;

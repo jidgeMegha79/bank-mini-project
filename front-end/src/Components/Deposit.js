@@ -6,7 +6,11 @@ const Deposit=(props)=>{
     const userdata=useContext(Context)
     const [show, setShow] = useState(false);
     const [amount,setAmount]=useState('')
-    const handleClose = () => setShow(false);
+    const [status,setStatus] = useState('')
+    const handleClose = () => {
+      setShow(false);
+      setStatus('')
+    }
     const handleShow = () => setShow(true);
     const handleSubmit=()=>{
       if(amount>0){
@@ -14,14 +18,13 @@ const Deposit=(props)=>{
         amount:amount,
         id:userdata[0].id
       }).then((response)=>{
-         alert(response.data.message)
+         setStatus(response.data.message)
       }).catch((err)=>{
         alert("can not connect to server")
       })
-      setShow(false)//close modal
       setAmount()
       
-    }else alert("please enter valid amount")
+    }else setStatus("please enter valid amount")
     
   }
     return(
@@ -29,7 +32,7 @@ const Deposit=(props)=>{
         <Button  onClick={handleShow}>
         Deposit Money
       </Button>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose}  backdrop="static">
         <Modal.Header closeButton>
           <Modal.Title>Deposit Form</Modal.Title>
         </Modal.Header>
@@ -44,11 +47,13 @@ const Deposit=(props)=>{
                 value={amount}
                 onChange={(event)=>setAmount(event.target.value)}
               />
+              <h6 className='text-danger mt-3'>{status}</h6>
             </Form.Group>
            
           </Form>
         </Modal.Body>
-        <Modal.Footer>          
+        <Modal.Footer>   
+              
           <Button variant="primary" onClick={handleSubmit}>
             Deposit
           </Button>

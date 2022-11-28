@@ -2,7 +2,7 @@
     /* position: relative;
      width: 100%; 
     min-height: 100vh; */
-    background-image: linear-gradient(to right,rgba(0,100,200,0.4), rgba(255, 88, 88,0.8));
+    background-image: linear-gradient(to right,rgba(85, 149, 214, 0.4), rgba(255, 88, 88,0.8));
     
 }
 .icon{
@@ -32,5 +32,12 @@ min-height: 100vh;
 }
 .para{
     color:black;
+    font-size: 1.5rem;
+}
+.loginbtn{
+    background-image: linear-gradient(to right,rgba(255, 0, 85, 0.644), rgba(255, 88, 88,0.8));  
+}
+.header{
+    font-size: 1.3rem;
 }
 

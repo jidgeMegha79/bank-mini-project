@@ -1,10 +1,62 @@
-p{
-    color:grey
-}
-.hovereffect{
-    background-color: white;
-}
-.hovereffect:hover{
-    background-color:pink;
+.feature-row{
+    overflow-wrap:break-word;
+    padding-top:30px
+
     
+}
+
+
+.icon{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    background: rgba(197, 101, 101, 0.5);
+    line-height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    margin-bottom:20px ;
+    transition: all, transform 1s;
+}
+.icon:hover{
+    width: 80px;
+    height: 80px;
+    transform: rotate(180deg);
+      
+}
+.featurebox{
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+    background-color: white;
+    height: auto;
+    padding:35px;
+    margin-top: 25px;
+    transition: all 2s ease-in-out,transform 2s;
+    
+    
+}
+.featurebox:hover{
+    
+    background: linear-gradient(to right,rgba(219, 5, 16, 0.6),rgba(240, 13, 138, 0.6));
+    color:white;
+    transform: scaleY(1.1);
+}
+.material-icons.md-36 { font-size: 36px; }
+
+.featurebox p{
+    font-size: 1.5rem;
+    padding: 10px 0px;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
+.featurebox {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+}
+@media only screen and (max-width: 767px){
+.featurebox {
+    text-align: center;
+    padding: 25px 20px;
+}
 }

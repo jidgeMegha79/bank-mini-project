@@ -11,6 +11,7 @@ import Home2 from './Components/Home2'
 import Footer from './Components/Footer';
 import Dashboard from './Components/Dashboard'
 import { useState,createContext } from 'react';
+import Signupsuccess from './Components/Signupsuccess';
 //usecontext for send userid globaly between components
 const Context=createContext()
 function App() {
@@ -35,7 +36,9 @@ function App() {
         </Route>
          {/* provide setUserdata to login for state updating when user login */}
         <Route path='/login' element={<Login setId={setUserdata}/>}></Route>
-        <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/signup' element={<Signup />}/>
+        <Route path='/signup/signupsuccess' element={<Signupsuccess/>}/>
+        
         <Route path='/contactUs' element={<ContactUs/>}></Route>
         <Route path='/services' element={<Services/>}></Route>
         

@@ -23,7 +23,7 @@ app.use(express.json());
 app.get("/",(req,res)=>{
   res.send("welcome to backend server");
 });
-app.post("/api/userdata", (req,res)=>{
+app.post("/api/signup", (req,res)=>{
   const userinfo=JSON.parse(req.body.userdata)
   firstname=userinfo.fname;
   middlename=userinfo.mname;
@@ -43,10 +43,15 @@ app.post("/api/userdata", (req,res)=>{
   db.query(sql,
     [firstname,middlename,lastname,addressline1,addressline2,country,state,city,zipcode,emailid,phonenumber,accounttype,pwd],
     (err,result)=>{
-      if(result.affectedRows>0){
-        res.send({message:"Data submitted successfully"})
+      if(err){
+        res.send(err)
+        console.log(err)
+      }else{
+        if(result.affectedRows>0){        
+        res.send(result)
       }
-     console.log(result.affectedRows)
+    }
+     
     })
 });
 //for login user
@@ -57,11 +62,9 @@ app.post("/api/userlogin",(req,res)=>{
   db.query(qry,[username,password],(err,result)=>{
     if(err){
       res.send({err:err})
-    }
-    if(result.length>0){
-      res.send(result)
     }else{
-      res.send({message:"Incorrect username or password"})
+      res.send(result)
+      console.log(success)
     }
   })
 })

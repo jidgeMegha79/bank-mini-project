@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const Footer=()=>{
     return(
         <Container fluid className='footer-area text-white'>
-            <Container className='p-3'>
+            <Container className='p-2'>
             <Row className='d-flex flex-row flex-wrap'>
                 <Col className='col-md-4 col-sm-6 '>
                 <div>
@@ -14,7 +14,7 @@ const Footer=()=>{
                         <li><Link to='/about'>About </Link></li>
                         <li><Link to='/services'>Services</Link></li>
                         <li><Link to ='#'>Features</Link></li>
-                        <li><Link to='/layout'>Home</Link></li>
+                        <li><Link to='/'>Home</Link></li>
                     </ul>
                 </div>
                 </Col>
@@ -36,9 +36,9 @@ const Footer=()=>{
                 <h3>Address</h3>
                 <hr/>
                     <ul>
-                        <li>Lacation : Shivaji Nagar,Aurangabad</li>
-                        <li>Email : xyz@gmail.com</li>
-                        <li>Phone : xxxxxxxxxx</li>
+                        <li>Lacation : Shivaji Nagar, Aurangabad</li>
+                        <li>Email : meghaudage79@gmail.com</li>
+                        <li>Phone : 7219518557</li>
                         
                     </ul>
 
