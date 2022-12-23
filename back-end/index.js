@@ -64,7 +64,7 @@ app.post("/api/userlogin",(req,res)=>{
       res.send({err:err})
     }else{
       res.send(result)
-      console.log(success)
+      console.log('success')
     }
   })
 })
@@ -122,3 +122,28 @@ console.log(result)
       console.log(result)
     })
   })
+  //for user profile update
+  app.put("/api/updateprofile", (req,res)=>{
+    const userinfo=JSON.parse(req.body.userinfor)
+    userid=userinfo.id
+    firstname=userinfo.firstname;
+    middlename=userinfo.middlename;
+    lastname=userinfo.lastname;
+    addressline1=userinfo.addressline1;
+    addressline2=userinfo.addressline2;
+    country=userinfo.country;
+    state=userinfo.state;
+    city=userinfo.city;
+    zipcode=userinfo.zipcode;
+    emailid=userinfo.emailid;
+    phonenumber=userinfo.phonenumber;
+    const sql='UPDATE  userInformation SET firstname=?,middlename =?,lastname =?,addressline1=?,addressline2=?,country=?,state=?,city=?,zipcode=?,emailid=?,phonenumber=? WHERE id=?'
+    db.query(sql,[firstname,middlename,lastname,addressline1,addressline2,country,state,city,zipcode,emailid,phonenumber,userid],(err,result)=>{
+        if(err) throw err
+        console.log("success")
+        if(result.affectedRows>0){        
+          res.send(result)
+        }
+             
+      })
+  });

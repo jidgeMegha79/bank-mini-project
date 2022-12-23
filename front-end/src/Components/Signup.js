@@ -24,8 +24,7 @@ function Signup() {
  //onchange event handler for user information
    const dataHandler=(e)=>{
      setUserInfo({...userInfo,...address,[e.target.name]:e.target.value})
-    
-   }    
+    }    
    useEffect(()=>{   
     const userdata=JSON.stringify(userInfo);
     if(Object.keys(formErrors).length ===0 && isSubmit){
