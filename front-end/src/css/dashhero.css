@@ -1,0 +1,13 @@
+.dashhero-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    margin: auto;
+    line-height: 3rem;
+    background-image: linear-gradient(to right,rgba(85, 149, 214, 0.4), rgba(255, 88, 88,0.8));
+}
+.dashhero-btn{
+    background-image: linear-gradient(to right,rgba(255, 0, 85, 0.644), rgba(255, 88, 88,0.8));  
+}

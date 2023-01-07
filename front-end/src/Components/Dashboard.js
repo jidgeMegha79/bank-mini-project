@@ -1,34 +1,35 @@
-import Withdraw from "./Withdraw"
-import Deposit from "./Deposit";
-import Transaction from './Transaction'
-import Viewbalance from './Viewbalance'
+
 import { Navbar,Nav,Offcanvas} from 'react-bootstrap'
-import {NavLink} from 'react-router-dom'
+import {NavLink,useLocation} from 'react-router-dom'
 import {Context} from '../App'
 import {useContext,useState} from 'react'
 import { Avatar } from '@mui/material';
 import '../css/dashboard.css'
 import Userprofile from "./Userprofile"
 import { Container } from "react-bootstrap";
+import Dashbody from './Dashbody'
+
+import {Outlet} from 'react-router-dom'
 /****/
 const Dashboard=()=>{
   const userdata=useContext(Context)
   const [show, setShow] = useState(false);  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let location=useLocation();
     return(
       <div className=''>
         <Navbar  bg='dark' expand='lg' variant='dark p-2 '>
           <Navbar.Brand className='d-flex align-items-center'>           
               <Avatar src="/broken-image.jpg" onClick={handleShow} />
-              <h5 className='p-2' > Welcome</h5>
+              <h5 className='p-2' > Welcome {userdata[0].firstname}</h5>
               <Offcanvas show={show} onHide={handleClose} backdrop="static" style={{width:'50%'}}>
                 <Container>
                  <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Edit Profile</Offcanvas.Title>
+                  <Offcanvas.Title></Offcanvas.Title>
                  </Offcanvas.Header>
                  <Offcanvas.Body>
-                    <Userprofile/>
+                    <Userprofile handleShow={setShow}/>
                  </Offcanvas.Body>
                 </Container>
               </Offcanvas>
@@ -37,16 +38,16 @@ const Dashboard=()=>{
           <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end' >
             <Nav className=''>
               <Nav.Item className='dashnav'>
-                <Deposit/>
+              <NavLink to="deposit" className="nav-link ">Deposit Money</NavLink>
               </Nav.Item>
               <Nav.Item className='dashnav'>
-                <Withdraw/>
+              <NavLink to="withdraw" className="nav-link ">Withdraw Money</NavLink>
               </Nav.Item>
               <Nav.Item className='dashnav'>
-                <Transaction/>
+              <NavLink to="transaction" className="nav-link ">View Transaction</NavLink> 
               </Nav.Item>
               <Nav.Item className='dashnav'>
-                <Viewbalance/>
+              <NavLink to="viewbalance" className="nav-link ">View Account Balance</NavLink>
               </Nav.Item>
               <Nav.Item>
               <NavLink to="/" className="nav-link bg-success text-white   ">Logout</NavLink>
@@ -54,9 +55,9 @@ const Dashboard=()=>{
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      
-        <Userprofile/>
-      
+        {location.pathname ==="/dashboard" ? <Dashbody/>:null}
+        <Outlet/>
+       
       </div>
     );
 }

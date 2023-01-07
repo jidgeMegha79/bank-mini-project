@@ -92,7 +92,7 @@ console.log(result)
   amount=req.body.amount;
   id=req.body.id;
   const qry="insert into transaction(accountnumber,activity,amount,accountbalance) values((select accountnumber from userInformation where id=?),'debit',?,(select balance from userInformation where id=?))"
-  db.query("update userInformation set balance=balance-? where id=? AND balance>=?",[amount,id,amount],(err,result)=>{   
+db.query("update userInformation set balance=balance-? where id=? AND balance>=?",[amount,id,amount],(err,result)=>{   
 
     if(result.affectedRows===1){  
       db.query(qry,[id,amount,id,amount],(err,result)=>{

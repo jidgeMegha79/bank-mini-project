@@ -12,6 +12,10 @@ import Footer from './Components/Footer';
 import Dashboard from './Components/Dashboard'
 import { useState,createContext } from 'react';
 import Signupsuccess from './Components/Signupsuccess';
+import Deposit from './Components/Deposit'
+import Withdraw from './Components/Withdraw'
+import Viewbalance from './Components/Viewbalance'
+import Transaction from './Components/Transaction'
 //usecontext for send userid globaly between components
 const Context=createContext()
 function App() {
@@ -46,8 +50,12 @@ function App() {
         <Context.Provider value={userdata}>
         <Dashboard />
         </Context.Provider>
-        }
-        />
+        }>
+        <Route path='withdraw' element={<Withdraw/>}/>
+        <Route path='deposit' element={<Deposit/>}/>
+        <Route path='transaction' element={<Transaction/>}/>
+        <Route path='viewbalance' element={<Viewbalance/>}/>
+        </Route>
         <Route path='*' element={<NoPage/>}></Route>
       </Routes>
       {location.pathname==='/' || location.pathname==='/contactUs' || location.pathname==='/services' ?<Footer/>:null}

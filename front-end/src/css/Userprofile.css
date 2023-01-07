@@ -1,4 +1,65 @@
-.form-container{
-    border:5px solid grey;
-    background-color: cornsilk;
+.title{
+    text-align: center;
+    padding:10px
 }
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    height: 100px;
+}
+.svg-icon{
+   transform: scale(2);
+}
+.main-container{
+    margin: 20px 0px;
+    border:5px solid grey;
+    background-color: rgba(243, 212, 243, 0.5);
+    padding:0;
+}
+.form-container{
+    padding: 20px;
+    border:2px solid pink
+
+}
+.submit-row{
+    justify-content: center;
+}
+.update-btn{
+    background-color: hotpink;
+    color: white;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+*{
+    overflow-x: hidden;
+}
+.edit-btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.closebtn{
+     display:flex;
+    justify-content: flex-end;
+    padding: 5px; 
+}
+.modal-body{
+    display: block;
+    align-items: center;
+    text-align: center;
+    line-height: 60px;
+}
+.modal-body p{
+    font-size: 1.3rem;
+
+}
+.check-circle{
+    transform: scale(3);
+    color:green;
+    margin: 30px;
+
+
+}
+
+

@@ -1,16 +1,13 @@
-import {Button,Modal} from 'react-bootstrap'
-import React, { useState,useContext } from 'react';
+import {NavLink} from 'react-router-dom'
+import React, { useState,useContext, useEffect } from 'react';
 import Axios from 'axios'
 import {Context} from '../App'
+import {CloseButton,Container} from 'react-bootstrap'
 
 const Viewbalance=()=>{
 const userdata=useContext(Context)
-const [show, setShow] = useState(false);
 const [balance,setBalance]=useState()
-
-const handleClose = () => setShow(false);
-const handleShow = () => {
- setShow(true);
+useEffect(() => {
  Axios.post("http://localhost:3010/api/viewbalance",{
   id:userdata[0].id
  }).then((response)=>{
@@ -19,33 +16,18 @@ const handleShow = () => {
    alert("can not connect to server")
  })
  setBalance()
-}
-return(  
+},[])
 
-    <div>
-      <Button  onClick={handleShow}>
-        View Account Balance
-      </Button>
-
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header>
-          <Modal.Title>Your Account Balance </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-         <h5>₹ {balance}</h5>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+return( 
+    <Container className='dashhero-container'>
+      <div>
+        <NavLink to='/dashboard'><CloseButton  className='float-end p-3'/></NavLink>
+        <h2>your account balance is</h2>
+      </div>
+      <div>
+         <h5>₹ {balance}</h5>      
+      </div>
+    </Container>
   );
 }
 export default Viewbalance;

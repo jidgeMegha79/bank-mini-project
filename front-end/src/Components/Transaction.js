@@ -1,16 +1,14 @@
-import React, { useState,useContext } from 'react';
-import {Button,Modal,Table} from 'react-bootstrap';
+import React, { useState,useContext, useEffect } from 'react';
+import {Button,Modal,Table,CloseButton} from 'react-bootstrap';
 import Axios from 'axios'
 import {Context} from '../App'
+import {NavLink} from 'react-router-dom'
 
 function Transaction() {
   const userdata=useContext(Context)
-  const [show, setShow] = useState(false);
   const [transaction,setTransaction] =useState([])
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => {
-    setShow(true);
+  useEffect(()=> {
     Axios.post('http://localhost:3010/api/transaction',{
       id:userdata[0].id
     }).then((response)=>{
@@ -19,25 +17,14 @@ function Transaction() {
       alert("can not connect to server")
     })
     
-  }
+  },[])
   return (
     <div>
-      <Button  onClick={handleShow}>
-       View Transaction
-      </Button>
-
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-        fullscreen={true}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Transaction</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-         <Table>
+      <NavLink to='/dashboard'><CloseButton className='float-end p-3'/></NavLink>
+      
+      <h1 className='text-center'>Transactions</h1>
+      <div className='p-3'>
+         <Table striped hover bordered responsive>
              <thead>
                  <tr>
                  <th>Activity</th>
@@ -59,9 +46,9 @@ function Transaction() {
                  
              </tbody>
          </Table>
-        </Modal.Body>
+        </div>
     
-      </Modal>
+      
     </div>
   );
 }
