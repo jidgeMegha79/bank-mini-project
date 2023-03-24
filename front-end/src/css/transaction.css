@@ -1,0 +1,22 @@
+.pagination-container{
+   display: flex;
+   justify-content: center;
+   height: 50px;
+}
+.pagination-container a{
+    padding:20px;
+    border-radius: 5px;
+    color:blue;
+    cursor: pointer; 
+    text-align: center;
+    vertical-align: middle;
+}
+.pagination-container a:hover{
+  color:black;
+  background-color: #ddd;
+}
+.pagination-active a{
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}

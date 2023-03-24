@@ -147,3 +147,9 @@ db.query("update userInformation set balance=balance-? where id=? AND balance>=?
              
       })
   });
+  app.get("/api/v1/devices",(req,res)=>{
+    db.query("select * from devices",(err,result)=>{
+      res.send(result)
+      console.log(result)
+    })
+  })

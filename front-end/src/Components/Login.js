@@ -13,6 +13,8 @@ function Login(props){
  const[username,setUsername]=useState('')
  const[password,setPassword]=useState('')
  const[status,setStatus]=useState('')
+ //const[userdata,setUserdata]=useState([])
+ 
  //onchage event for username
   const handleUsername=(e)=>{
     setUsername(e.target.value)
@@ -35,7 +37,8 @@ function Login(props){
              if(response.data.length>0){
               console.log('welcome')
               navigate('/dashboard')            
-              props.setId(response.data) 
+              //setUserdata(response.data)
+              sessionStorage.setItem("userdata",JSON.stringify(response.data))
              }else{
                  setStatus("user not found")
              }

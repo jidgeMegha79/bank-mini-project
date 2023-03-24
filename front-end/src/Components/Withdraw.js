@@ -24,7 +24,7 @@ const Withdrow=(props)=>{
   //post amount withdraw request 
    const data={
      name:"Withdraw Form",
-     button:"Withdraw amoun",
+     button:"Withdraw amount",
      status:status
    }  
   useEffect(()=>{
@@ -47,33 +47,7 @@ const Withdrow=(props)=>{
   
   return(
     <div>
-      {/* <Button  onClick={()=>setShow(true)}>
-         Withdraw Money
-      </Button> */}
-      {/* <Modal show={show} onHide={handleClose}  backdrop="static">
-        <Modal.Header closeButton>
-           <Modal.Title>Withdraw Form</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Control
-                type="number"
-                placeholder="Enter amount here"
-                autoFocus
-                onChange={(event)=>setAmount(event.target.value)}
-              />
-              <h6 className='text-danger mt-3'>{status}</h6>
-            </Form.Group>           
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>          
-          <Button variant="primary" onClick={handleSubmit}>
-            Withdrow
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
-      <DashHero onDataSubmit={dataHandler} {...data} />
+    <DashHero onDataSubmit={dataHandler} {...data} />
     </div>
   );
 }

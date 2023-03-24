@@ -4,15 +4,16 @@ import {NavLink,useLocation} from 'react-router-dom'
 import {Context} from '../App'
 import {useContext,useState} from 'react'
 import { Avatar } from '@mui/material';
-import '../css/dashboard.css'
 import Userprofile from "./Userprofile"
 import { Container } from "react-bootstrap";
 import Dashbody from './Dashbody'
-
+import {Edit} from '@mui/icons-material'
 import {Outlet} from 'react-router-dom'
 /****/
 const Dashboard=()=>{
-  const userdata=useContext(Context)
+  //const userdata=useContext(Context)
+  const userdata=(JSON.parse(sessionStorage.getItem("userdata")));
+  console.log(userdata)
   const [show, setShow] = useState(false);  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -21,8 +22,9 @@ const Dashboard=()=>{
       <div className=''>
         <Navbar  bg='dark' expand='lg' variant='dark p-2 '>
           <Navbar.Brand className='d-flex align-items-center'>           
-              <Avatar src="/broken-image.jpg" onClick={handleShow} />
-              <h5 className='p-2' > Welcome {userdata[0].firstname}</h5>
+              <Avatar src="/broken-image.jpg"  />
+              <h4 className='p-2' >{userdata[0].firstname}</h4>
+              <button><span><Edit onClick={handleShow}/></span></button>
               <Offcanvas show={show} onHide={handleClose} backdrop="static" style={{width:'50%'}}>
                 <Container>
                  <Offcanvas.Header closeButton>
@@ -36,21 +38,21 @@ const Dashboard=()=>{
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end' >
-            <Nav className=''>
-              <Nav.Item className='dashnav'>
-              <NavLink to="deposit" className="nav-link ">Deposit Money</NavLink>
+            <Nav >
+              <Nav.Item className='dashnav hover'>
+              <NavLink to="deposit" className="nav-link text-white">Deposit Money</NavLink>
               </Nav.Item>
-              <Nav.Item className='dashnav'>
-              <NavLink to="withdraw" className="nav-link ">Withdraw Money</NavLink>
+              <Nav.Item className='dashnav hover'>
+              <NavLink to="withdraw" className="nav-link text-white">Withdraw Money</NavLink>
               </Nav.Item>
-              <Nav.Item className='dashnav'>
-              <NavLink to="transaction" className="nav-link ">View Transaction</NavLink> 
+              <Nav.Item className='dashnav hover'>
+              <NavLink to="transaction" className="nav-link text-white">View Transaction</NavLink> 
               </Nav.Item>
-              <Nav.Item className='dashnav'>
-              <NavLink to="viewbalance" className="nav-link ">View Account Balance</NavLink>
+              <Nav.Item className='dashnav hover'>
+              <NavLink to="viewbalance" className="nav-link text-white">View Account Balance</NavLink>
               </Nav.Item>
-              <Nav.Item>
-              <NavLink to="/" className="nav-link bg-success text-white   ">Logout</NavLink>
+              <Nav.Item className='hover'>
+              <NavLink to="/" className="nav-link  link-color text-white  ">Logout</NavLink>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

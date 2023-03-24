@@ -1,12 +1,23 @@
+
 .dashhero-container{
     display:flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     
-    
-    margin: auto;
-    line-height: 3rem;
+}
+.dashhero-div{
+    width:50%;
+    height:auto;
     background-image: linear-gradient(to right,rgba(85, 149, 214, 0.4), rgba(255, 88, 88,0.8));
+    padding:10px 40px 40px;
+    line-height: 3rem;
+    margin: 10% 0;
+
+}
+@media only screen and (max-width:772px){
+    .dashhero-div{
+        width:90%;
+    }
 }
 .dashhero-btn{
     background-image: linear-gradient(to right,rgba(255, 0, 85, 0.644), rgba(255, 88, 88,0.8));  

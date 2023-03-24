@@ -1,8 +1,18 @@
+
 .hover :hover{
  background-color: darkgrey;
 }
 .hover a:active{
-    font-size: 20px;
-    font-weight: bold;
-
+    color:blue;
+    background-color: teal;
+}
+.hover{
+    margin-right: 10px;
+}
+.hover a{
+    float: right;
+    padding: 12px;
+    font-size: 17px;
+    text-align: center;
+    
 }

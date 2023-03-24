@@ -1,7 +1,7 @@
-import dashboardImg from '../images/dashboard.jpg'
+import dashboardImg from '../images/dash.png'
 const Dashbody=()=>{
-    const div={
-        backgroundImage: "linear-gradient(to right,rgba(85, 149, 214, 0.4), rgba(255, 88, 88,0.8))",
+    const dashdiv={
+        backgroundImage:"linear-gradient(to right,rgba(85, 149, 214, 0.4), rgba(255, 100, 100,0.8))",
         minHeight:"920px",
         width:"100%",
         display:"flex",
@@ -13,10 +13,8 @@ const Dashbody=()=>{
        //backgroundColor:"red"
     }
     return(
-        <div style={div}>
-         <div style={para} className='flex-center'>
-             <h1>Thank You!! for joining with us. </h1>
-         </div>
+        <div style={dashdiv}>
+        <img src={dashboardImg}></img>
         </div>
     );
 }

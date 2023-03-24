@@ -20,12 +20,15 @@ useEffect(() => {
 
 return( 
     <Container className='dashhero-container'>
-      <div>
-        <NavLink to='/dashboard'><CloseButton  className='float-end p-3'/></NavLink>
-        <h2>your account balance is</h2>
-      </div>
-      <div>
-         <h5>₹ {balance}</h5>      
+      <div className='dashhero-div'>
+        <div>
+          <NavLink to='/dashboard'><CloseButton  className='float-end p-3'/></NavLink>
+          <h2>Your account balance is:</h2>
+        </div>
+        <hr/>
+        <div>
+          <h4>₹ {balance}</h4>      
+        </div>
       </div>
     </Container>
   );

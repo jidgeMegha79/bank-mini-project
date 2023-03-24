@@ -16,11 +16,15 @@ import Deposit from './Components/Deposit'
 import Withdraw from './Components/Withdraw'
 import Viewbalance from './Components/Viewbalance'
 import Transaction from './Components/Transaction'
+import { stringify } from 'querystring';
 //usecontext for send userid globaly between components
 const Context=createContext()
 function App() {
   //usestate for sending login user data to dashboard and its child component
   const[userdata,setUserdata]=useState([]);
+ 
+  
+
   let location=useLocation();
   //for accessing user data in dashboard component
   // const handleUserlogin=(userdata)=>{

@@ -13,11 +13,11 @@ const DashHero=(props)=>{
 
  return(
    <Container className='dashhero-container'> 
-     
+    <div className='dashhero-div'> 
      <div>
          <h1>{props.name}</h1>
      </div>
-     <div className=''>
+     <div >
         <Form>
             <Form.Group className="mb-3 " controlId="exampleForm.ControlInput1">
               <Form.Control
@@ -37,7 +37,7 @@ const DashHero=(props)=>{
        </Button>
      </div>
 
-     
+    </div>
     </Container>
  );
 }

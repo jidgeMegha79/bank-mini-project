@@ -3,6 +3,7 @@ import {useState,useContext} from 'react'
 import Axios from 'axios'
 import {Context} from '../App'
 import {NavLink} from 'react-router-dom'
+import '../css/dashhero.css'
 const Deposit=(props)=>{
     const userdata=useContext(Context)
     const [amount,setAmount]=useState('')
@@ -23,9 +24,9 @@ const Deposit=(props)=>{
     
   }
     return(
-    <Container className='dashhero-container'> 
-       
-      <div>
+    <Container fluid className='dashhero-container '> 
+    <div className='dashhero-div '>  
+      <div className='mb-3'>
       <NavLink to='/dashboard'><CloseButton className='float-end p-3'/></NavLink>
           <h1>Deposit Form</h1>
       </div>
@@ -49,7 +50,7 @@ const Deposit=(props)=>{
         </Button>
       </div>
  
-      
+    </div> 
      </Container>
 
     );

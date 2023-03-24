@@ -78,7 +78,7 @@ const Userprofile=({handleShow})=>{
      <Form onSubmit={handleSubmit} className='form-container mb-3'>
         <div className='edit-btn-div'>
          <Button className='edit-btn' onClick={()=>setIsDisabled(false)}>
-         <span>Edit</span><Edit/></Button>
+         Edit<span><Edit/></span></Button>
         </div>
         
        <h3>{status}</h3>      
