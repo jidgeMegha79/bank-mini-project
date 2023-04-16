@@ -1,6 +1,6 @@
 import {Form,Row,Col,Container,Button} from 'react-bootstrap'
-import {useState,useContext,useEffect} from 'react'
-import {Context} from '../App'
+import {useState,useEffect} from 'react'
+//import {Context} from '../App'
 import Axios from 'axios'
 import '../css/Userprofile.css'
 import { Avatar} from '@mui/material';
@@ -8,7 +8,8 @@ import {Edit} from '@mui/icons-material'
 import MyVerticallyCenteredModal from "./MyVerticallyCenteredModal"
 
 const Userprofile=({handleShow})=>{
-    const userdata=useContext(Context)
+    //const userdata=useContext(Context)
+    const userdata=(JSON.parse(sessionStorage.getItem("userdata")));
     const [userInfo,setUserinfo]=useState(userdata[0])
     const [isDisabled,setIsDisabled]=useState(true)
     const [formErrors,setFormErrors]=useState({})
@@ -36,7 +37,7 @@ const Userprofile=({handleShow})=>{
           alert(err)
         })
       }
-      },[formErrors,isSubmit]);
+      },[formErrors,isSubmit,userInfo]);
      //event for handling submit button
      const handleSubmit=(e)=>{
       e.preventDefault()

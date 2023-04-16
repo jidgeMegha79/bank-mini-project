@@ -1,10 +1,10 @@
-import {Button,Row,Col,Card, Form, CloseButton, InputGroup} from 'react-bootstrap'
+import {Button,Row,Col,Card, Form,InputGroup} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import '../css/Login.css';
 import {useState} from 'react'
 import Axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import {Person,Lock,Google,Facebook,Twitter, ArrowCircleLeft} from '@mui/icons-material';
+import {Person,Lock, ArrowCircleLeft} from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import signupImage from '../images/login.jpg'
 
@@ -57,7 +57,7 @@ function Login(props){
             <Col className='col-12 col-lg-6 imgdisplay order-2 order-lg-1'>
              <img src={signupImage} alt="login" width="100%"/>
             </Col>
-            <Col className='col-12 col-lg-6 d-flex justify-content-center div order-1 order-lg-2'>               
+            <Col className='col-12 col-lg-6 d-flex justify-content-center div order-1 order-lg-2 p-0'>               
                 <Card className='cards'>
                    <Card.Header className='header'>
                      <Link to="/" className='text-black'><ArrowCircleLeft/><span>Back</span></Link>

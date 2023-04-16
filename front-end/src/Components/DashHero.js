@@ -1,6 +1,6 @@
 import {Container,Form,Button} from 'react-bootstrap'
 import {useState} from 'react'
-import dashhero from '../css/dashhero.css'
+
 const DashHero=(props)=>{
   const[amount,setAmount]=useState(0);
   const[submit,setSubmit]=useState(false);

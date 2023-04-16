@@ -1,6 +1,6 @@
-import { Row, Col, Container, CloseButton, Form, Button, Card } from "react-bootstrap"
+import { Row, Col, Container, Form, Button, Card } from "react-bootstrap"
 import Address from "./Address"
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../css/Signup.css'
 import signupImage from './signupImage.jpg'
 import { useState, useEffect } from "react"
@@ -34,7 +34,7 @@ function Signup() {
         if(response.err){
           console.log(response.err)
         }
-        if(response){
+        if(!response.err){
           navigate('/signup/signupsuccess')
         }else{
           setStatus("something went wrong!error while submitting data")
@@ -43,7 +43,7 @@ function Signup() {
         alert(err)
       })
     }
-    },[formErrors]);
+    },[formErrors,isSubmit]);
    
 
    //form submit handler

@@ -1,18 +1,19 @@
 
-.hover :hover{
- background-color: darkgrey;
-}
-.hover a:active{
-    color:blue;
-    background-color: teal;
+.hover.a :hover{
+    color: red;
+    background-color: hotpink;
 }
 .hover{
-    margin-right: 10px;
+    margin-right: 30px;
 }
 .hover a{
     float: right;
     padding: 12px;
-    font-size: 17px;
+    font-size: 24px;
     text-align: center;
     
 }
+/* .active{
+    font-weight: bold;
+    background-color: grey;
+} */

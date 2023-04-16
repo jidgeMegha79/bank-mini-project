@@ -1,10 +1,10 @@
-import {Modal,Form,Button} from 'react-bootstrap'
-import {useState,useContext,useEffect} from 'react'
-import {Context} from '../App'
+import {useState,useEffect} from 'react'
+//import {Context} from '../App'
 import Axios from 'axios'
 import DashHero from './DashHero'
 const Withdrow=(props)=>{
-  const userdata=useContext(Context) //capture data from login component
+  //const userdata=useContext(Context) //capture data from login component
+  const userdata=(JSON.parse(sessionStorage.getItem("userdata")));
   const [show, setShow] = useState(false); // for show and hide modal
   //const[amount,setAmount]=useState() // for amount to be widthdraw
   const [status,setStatus] =useState('')

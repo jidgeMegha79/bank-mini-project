@@ -9,15 +9,15 @@ const Home=()=>{
     const[crouselData,setCrouselData]=useState(CrouselData)
     useEffect(()=>{
         setCrouselData(CrouselData)
-    },[CrouselData])
+    },[crouselData])
    
-    console.log(crouselData.image)
+    //console.log(crouselData.image)
  return(
     <div>
        <Carousel className='slidecontainer'>
           {crouselData.map((data)=>{
             return(
-                <Carousel.Item className='contain'>
+                <Carousel.Item className='contain' key={data.id}>
                     <img src={data.image} alt='first slide' className='slide d-block'  />
                     <Carousel.Caption className="content">
                     <h1>{data.heading}</h1>

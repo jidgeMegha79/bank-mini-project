@@ -4,16 +4,29 @@ const bodyParser=require('body-parser')
 const cors=require('cors')
 const app=express();
 //database connectivity
-const db=mysql.createPool({
-  host:'localhost',
+const db=mysql.createConnection({
+  // host:'localhost',
+  // user:'root',
+  // password:'Server4me#',
+  // database:'bank_website',
+  // multipleStatements: true  
+  host:'34.29.218.68',
   user:'root',
   password:'Server4me#',
-  database:'bank_website',
+  database:'bank-database',
   multipleStatements: true
+
 });
 
-app.listen(3010,()=>{
-    console.log("server up and running")
+//to check wheather database is connected or not
+db.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+})
+// Listen to the App Engine-specified port, or 8080 otherwise
+const PORT = process.env.PORT || 8080;
+app.listen(PORT,()=>{
+    console.log(`server up and running on port ${PORT}`)
 });
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));

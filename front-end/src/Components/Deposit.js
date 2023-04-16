@@ -1,11 +1,12 @@
 import {Container,Form,Button,CloseButton} from 'react-bootstrap'
-import {useState,useContext} from 'react'
+import {useState} from 'react'
 import Axios from 'axios'
-import {Context} from '../App'
+//import {Context} from '../App'
 import {NavLink} from 'react-router-dom'
 import '../css/dashhero.css'
 const Deposit=(props)=>{
-    const userdata=useContext(Context)
+   // const userdata=useContext(Context)
+   const userdata=(JSON.parse(sessionStorage.getItem("userdata")));
     const [amount,setAmount]=useState('')
     const [status,setStatus] = useState('')
     const handleSubmit=()=>{

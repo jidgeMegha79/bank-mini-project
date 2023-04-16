@@ -3,7 +3,6 @@ import {Form} from 'react-bootstrap'
 import Contactimage from '../images/services.jpg'
 import '../css/contactus.css'
 import Button from '@restart/ui/esm/Button';
-import { right } from '@popperjs/core';
 
 const ContactUs=()=>{
   const handleSubmit=(event)=>{
@@ -13,7 +12,7 @@ const ContactUs=()=>{
   return(
     <div> 
       <div className='imagecontainer'>
-        <img src={Contactimage} width="100%"></img>
+        <img src={Contactimage} width="100%" alt='contactUs img'></img>
         <div className='centered'>
           <h1>Contact Us</h1>
           <p>Get touch in with us</p>
@@ -37,14 +36,14 @@ const ContactUs=()=>{
               <Phone color='primary'fontSize='large'/>
                 <div>                    
                   <div>Phone:</div> 
-                  <div>+91-7219518557</div>  
+                  <div>+91-XXXXXXXXXX</div>  
                 </div>
             </div>
             <div className='d-flex  p-2 border border-2 mb-4 '>
               <Email color='primary' fontSize='large'/>
                 <div className='p-2'>                    
                   <div>Email:</div> 
-                  <div>meghaudage79@gmail.com</div>  
+                  <div>xyz@gmail.com</div>  
                 </div>
             </div>
           </div>  {/* first column closed */}

@@ -1,8 +1,7 @@
-import {Card,Col,Row,Button,ListGroup} from 'react-bootstrap'
+import {Col,Row,Button} from 'react-bootstrap'
 import feature1 from '../images/feature1.png';
 import feature2 from '../images/feature2.png';
 import feature3 from '../images/feature3.png';
-import {Car, CarRental} from '@mui/icons-material'
 import '../css/Services.css'
 import services from '../images/services.jpg'
 const Services=()=>{
@@ -26,18 +25,18 @@ const Services=()=>{
             <li>Vehical Insurance</li>
             <li>Travel Insurance</li>              
           </ul>
-          <Button >Know more</Button>            
+          <Button size='lg' className='know-more-btn' >Know more</Button>            
         </Col>
         <Col className='col-md-6 col-12'>
-           <img src={feature2} alt="" width='80%'/>
+           <img src={feature2} alt="" width='80%' className='mt-3'/>
         </Col>
       </Row>     
       
       <Row className='d-flex color rows '>
-        <Col className='col-md-6 col-12 order-sm-2 order-lg-1' >
-           <img src={feature3} alt="" width='80%'/>
+        <Col className='col-md-6 col-12 order-2 order-md-1 img-col' >
+           <img src={feature3} alt="" width='80%'className='mt-3'/>
         </Col>
-        <Col className='col-md-6 col-12 order-sm-1 order-lg-2' >
+        <Col className='col-md-6 col-12 order-sm-1 order-lg-2 ' >
             <h3>LOANS</h3>
             <h6>We are providing all types of loan with low rate of interest than others.</h6>
             <ul className='ul'>
@@ -46,7 +45,7 @@ const Services=()=>{
               <li>Car Loan</li>
               <li>Loan against securities</li>
             </ul>
-            <Button>Know more</Button>
+            <Button size='lg' className='know-more-btn'>Know more</Button>
         </Col>
          
       </Row> 
@@ -60,10 +59,10 @@ const Services=()=>{
               <li>Reccuring Deposit(RD)</li>
               
             </ul>
-            <Button>Know more</Button>
+            <Button size='lg' className='know-more-btn' >Know more</Button>
         </Col>
         <Col className='col-md-6 col-12'>
-           <img src={feature1} alt="" width='80%'/>
+           <img src={feature1} alt="" width='80%' className='mt-3'/>
         </Col>
       </Row>
       

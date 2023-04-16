@@ -20,8 +20,9 @@
   }
   .content p{
       font-size: 1.5rem;
-      color:rgb(240, 235, 235);
-      text-align:start
+      color:rgb(255, 255, 181);
+      text-align:start;
+      font-weight: bolder;
   }
 @media screen and (max-width: 772px) {
     .slide{
@@ -32,5 +33,9 @@
     }
     .contain .content{
         width:50%
+    }
+    .content p{
+        font-size: 1rem;
+
     }
 }

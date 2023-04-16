@@ -1,4 +1,4 @@
-import { Form,Card,Col,Row } from "react-bootstrap";
+import { Form,Col,Row } from "react-bootstrap";
 import {getCountries, getStates} from 'country-state-picker'
 import {useState, useEffect} from 'react'
 import React from 'react'

@@ -1,11 +1,11 @@
 import {NavLink} from 'react-router-dom'
-import React, { useState,useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
-import {Context} from '../App'
 import {CloseButton,Container} from 'react-bootstrap'
 
 const Viewbalance=()=>{
-const userdata=useContext(Context)
+//const userdata=useContext(Context)
+const userdata=(JSON.parse(sessionStorage.getItem("userdata")));
 const [balance,setBalance]=useState()
 useEffect(() => {
  Axios.post("http://localhost:3010/api/viewbalance",{
@@ -16,7 +16,7 @@ useEffect(() => {
    alert("can not connect to server")
  })
  setBalance()
-},[])
+},[userdata])
 
 return( 
     <Container className='dashhero-container'>

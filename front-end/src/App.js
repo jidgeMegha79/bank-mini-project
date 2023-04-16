@@ -16,7 +16,7 @@ import Deposit from './Components/Deposit'
 import Withdraw from './Components/Withdraw'
 import Viewbalance from './Components/Viewbalance'
 import Transaction from './Components/Transaction'
-import { stringify } from 'querystring';
+
 //usecontext for send userid globaly between components
 const Context=createContext()
 function App() {
